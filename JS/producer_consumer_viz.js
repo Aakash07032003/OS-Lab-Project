@@ -1,4 +1,8 @@
-var mutex = 1, full = 0, empty, item = 0; //initialised semaphore mutex in the form of int. 
+var mutex = 1, full = 0, empty, item = 0;
+// initialised semaphore mutex in the form of int. 
+// full variable tracks the full slots in buffer
+// empty variable tracks the empty slots in buffer
+
 var $output = $("#textArea");
 const executeBTN = document.getElementById("executeBTN");
 
