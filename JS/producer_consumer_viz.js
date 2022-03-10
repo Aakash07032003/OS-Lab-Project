@@ -56,8 +56,8 @@ function producerConsumer() {
     }
 
     // Checks if entered value is positive.
-    if (parseInt(nProducers) < 0 || parseInt(nConsumers) < 0 || parseInt(bufferSize) < 0) {
-        alert("Buffer size, Number of produced items, and number of items to be consumed should be greater than 0.");
+    if (parseInt(nProducers) < 0 || parseInt(nConsumers) < 0 || parseInt(bufferSize) <= 0) {
+        alert("Buffer size should be greater than 0, Number of produced items, and number of items to be consumed should not be negative.");
         resetPage();
     }
 
@@ -75,22 +75,18 @@ function producerConsumer() {
 
     else {
         //this loop calls producer function that produces an item.
-        for (let i = 0; i < parseInt(nProducers); i++) {
-            if ((mutex == 1) && (empty != 0)) {
+        for (let i = 0; i < parseInt(nProducers); i++) 
+            if ((mutex == 1) && (empty != 0)) 
                 producer();
-            }
-        }
 
         //this loop calls consumer function that consumes an item.
-        for (let i = 0; i < parseInt(nConsumers); i++) {
-            if ((mutex == 1) && (full != 0)) {
-                consumer();
-            }
-        }
+        for (let i = 0; i < parseInt(nConsumers); i++) 
+            if ((mutex == 1) && (full != 0)) 
+                consumer(); 
 
         //this for loop shows buttons on screen in a row for visualisation purpose.
         for (let i = 0; i < parseInt(nProducers) - parseInt(nConsumers); i++) {
-            var buttonOut = '<button type="button" class="outputBTN1' + (btnLocation + 1) + ' onclick="add_entry(this.id)">' + 'P' + (btnLocation + 1) + '</button>';
+            var buttonOut = '<button type="button" class="outputBTN' + (btnLocation + 1) + '">' + 'P' + (btnLocation + 1) + '</button>';
             btnLocation++;
             btnContainer.innerHTML += buttonOut;
         }
