@@ -1,316 +1,118 @@
-h3 {
-    position: absolute;
-}
-
-h1 {
-    position: absolute;
-    margin-top: -90px;
-}
-
 body {
-    position: relative;
-    
-    margin-left: 300px;
-    background-color:#E6E6FA;
-    
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    background: url(../Images/bg7.png) repeat;
 }
 
-#b1 {
+.left {
+    display: inline-block;
+    /* border: 2px solid red; */
+    color: white;
+    opacity: 1;
     position: absolute;
-    height: auto;
-    width: auto;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight:900;
-    margin-top: 125px;
-    margin-left: 115px;
+    left: 10px;
+    top: 10px;
+    padding-right: 50px;
 }
 
-button {
-    background-color: transparent;
-    padding: 10px 22px;
+.left img {
+    width: 55px;
+    /* height: 30px; */
+}
+
+.center {
+    display: block;
+    margin: 10px auto;
+    width: 35%;
+    opacity: 1;
+    /* To use margin auto, we need display as block and particular width */
+    /* border: 2px solid white; */
+    color: white;
+}
+
+.navbar {
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 20px;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar li a:hover {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
     text-align: center;
-    color: #373a40;
-    border: 4px solid #2d545e;
+    justify-content: center;
 }
 
-#b2 {
-    position: absolute;
-    height: auto;
-    width: auto;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight:900;
-    margin-top: 260px;
-    margin-left: 115px;
+.box h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 2.2rem;
 }
 
-img {
-    position: absolute;
-    left: 213px;
-    top: 190px;
-    width: 77px;
-    transition-duration: 2s;
+.button {
+    color: black;
+    background-color: gray;
+    padding: 5px;
+    margin: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 5px;
 }
 
-img#p0 {
-    width: 77px;
-    margin-top: 120px;
-
+.reset {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
-img#p1 {
-    width: 77px;
-    top: 240px;
-    margin-top: 200px;
+.reset-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    background-color: lightgray;
+    border: transparent;
+    padding: 15px;
+    margin-right: 10px;
 }
 
-#main {
-    margin-top: 50px;
-    margin-left: 200px;
+.form-input h1 {
+    color: white;
+    font-size: 2.2rem;
+    margin-left: 20px;
 }
 
-#reg {
-    position: absolute;
-    font-size: larger;
-    margin-top: 450px;
-    margin-left: 10px;
-}
-
-#loc {
-    position: absolute;
-    font-size: larger;
-    margin-top: 450px;
-    margin-left: 380px;
-}
-
-#box1,
-#box2 {
-    position: absolute;
-    border-color:#2d545e;
-    border-style: solid;
-    border-width: 5px;
-    height: 300px;
-    width: 100px;
-    margin-top: 50px;
-
-}
-
-#entry,
-#exit {
-
-    margin-top: 50px;
-    position: absolute;
-    border-color: #2d545e;
-    border-style: solid;
-    border-width: 5px;
-    height: 300px;
-    width: 100px
-}
-
-#entry {
-    margin-left: 170px;
-}
-
-#exit {
-    margin-left: 510px;
-}
-
-#box2 {
-    border-color: #2ecc40;
-    margin-left: 340px;
-
-}
- /* for navbar styles */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:200&display=swap");
-
-a {
-text-decoration: none;
-color: #fff;
-}
-.nav {
-background: rgba(0, 0, 0, 0.87);
-padding: 15px 0;
-padding-top: 7px;
-padding-bottom: 5px;
-margin-top: -10px;
-margin-left: -300px;
-margin-right: -8.2px;
-margin-bottom: 150px;
-
-z-index: 2;
-
-}
-.nav:after {
-display: block;
-content: "";
-clear: right;
-}
-
-.brand-logo {
-color: #fff;
-font-size: 20px;
-margin-top: 100px;
-margin-left: 20px;
-}
-input[type="checkbox"] {
-display: none;
-}
-.menu {
-margin: 4px;
-padding: 5px;
-border: 1px #fff solid;
-position: absolute;
-font-size: 12px;
-color: #fff;
-top: 10px;
-left: 10px;
-background: none;
-text-transform: capitalize;
-outline: none;
-display: none;
-}
-ul {
-float: right;
-font-size: 0;
-
-}
-li {
-display: inline-block;
-font-size: 20px;
-margin: 0 10px;
-text-transform: capitalize;
-color: #fff;
-padding: 5px 0;
-}
-li:first-child {
-margin-left: 0;
-}
-li:last-child {
-margin-right: 0;
-}
-.services {
-cursor: pointer;
-padding-right: 5px;
-}
-.services:hover .services-dropdown {
-display: block;
-color: black;
-cursor: pointer;
-}
-.services-dropdown {
-display: none;
-max-width: 200px;
-position: absolute;
-background: #f4f4f4;
-z-index: 2;
-}
-.services-dropdown a {
-display: block;
-color: #000;
-padding: 10px 15px;
-font-size: 18px;
-}
-.services-dropdown a:hover {
-background: #dcdcdc;
-}
-li input[type="text"] {
-height: 20px;
-padding: 7px 15px;
-font-size: 15px;
-background: #fff;
-border: none;
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;
-}
-.fa-search {
-background: white;
-color: #4a4a4a;
-padding: 10px;
-vertical-align: middle;
-border: none;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
-font-size: 14px;
-}
-li input[type="text"]:focus {
-outline: none;
-}
-.hover:after {
-display: block;
-content: "";
-border-bottom: 2px solid #fff;
-transform: scaleX(0);
-transition: transform ease-in 200ms;
-}
-.hover:hover:after {
-transform: scaleX(1);
-}
-
-@media screen and (max-width: 1024px) {
-.brand-logo {
-font-size: 20px;
-margin-left: 100px;
-}
-li {
-font-size: 15px;
-padding: 0;
-}
-.container {
-width: calc(100% - 100px);
-}
-li input[type="text"] {
-height: 12px;
-font-size: 12px;
-}
-.fa-search {
-font-size: 8px;
-padding: 9px;
-vertical-align: top;
-}
-.services-dropdown a {
-font-size: 11px;
-}
-}
-@media screen and (max-width: 768px) {
-.container {
-width: calc(100% - 40px);
-}
-.brand-logo {
-display: block;
-text-align: center;
-font-size: 1px;
-margin-left: 20px;
-}
-ul {
-display: none;
-float: none;
-text-align: center;
-}
-.fa-search {
-font-size: 8px;
-padding: 9px;
-vertical-align: top;
-}
-.menu {
-display: block;
-}
-.menu-toggle:checked ~ ul {
-display: block;
-}
-li {
-margin: 10px;
-padding: 0;
-}
-li:last-child {
-display: block;
-}
-}
-@media screen and (max-width: 428px) {
-li {
-font-size: 12px;
-}
-.fa-search {
-font-size: 8px;
-padding: 9px;
-vertical-align: top;
-}
+.form-input input {
+    font-size: 1.5rem;
+    margin: 20px;
+    margin-top: 0px;
+    border-radius: 25px;
+    padding: 15px;
+    border: transparent;
 }
