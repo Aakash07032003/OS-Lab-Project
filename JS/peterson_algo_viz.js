@@ -1,101 +1,71 @@
-let Process0 = 0;
-let Process1 = 1;
+var turn,lock=0;
 
-var $output = $("#textArea")
-var interest = [false,false];
+var flag=[0,0];
+function critical_state(id){
+    var x=document.getElementById(id);
+    x.remove();
+    var y=document.getElementById('critical');
+    if(lock==0){
+        y.innerHTML='<button class=" btn btn-dark p-3 btn-lg fourth mr-4" id = '+id+' onclick="exit_state(this.id)">P'+id+'</button>';
+        turn=1-id;
+        flag[id-1]=1;
+        lock=1;
+        document.getElementById('turn_state').innerHTML='<i class="fas fa-sync-alt mr-2"></i>Turn: '+(turn+2);
+        if(id==1){
+            document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
+        }
+        else{
+            document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
+        }
 
-function entry_state(process){
-  
-    let other;
-    other = 1 -process;
-    interest[process] = true;
-    turn = process;
-
-    if(turn ==1){
-        $output.append('Process no.' + process + ' has started.\n');
-		$i1.text(interest[process]);
-		document.getElementById("textArea").scrollTop = document.getElementById(
-			"textArea"
-		).scrollHeight;
-		await sleep(2000);
     }
     else{
-        $output.append('Process no.' + process + ' has started.\n');
-		$i0.text(interest[process]);
-		document.getElementById("textArea").scrollTop = document.getElementById(
-			"textArea"
-		).scrollHeight;
-		await sleep(2000);
+        alert("Deadlock occures");
+        reset();
+        lock=0;
     }
-    if(interest[other] == true && turn == process){
-        $vari.text('P' + process);
-		$output.append('Process no.' + other + ' is already in the critical section.\n');
-		document.getElementById("textArea").scrollTop = document.getElementById(
-			"textArea"
-		).scrollHeight;
-		await sleep(3000);
-		return;
+    console.log(y);
+
+}
+
+function exit_state(id){
+    var x=document.getElementById(id);
+    x.remove();
+    lock=0;
+    flag[id-1]=0;
+
+    if(id==1){
+        document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
     }
-
+    else{
+        document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
+    }
+    var y=document.getElementById('exit');
+    y.innerHTML+='<button class=" btn btn-dark p-3 btn-lg fourth mr-4" id = '+id+' onclick="entry_state(this.id)">P'+id+'</button>';
+    
 
 }
 
-function critical_state(process){
-    if (process == 0) {
-		$vari.text('P' + process);
-		// P0Move(200)
-		$output.append('Process no.' + process + ' has entered the critical section.\n');
-		document.getElementById("textArea").scrollTop = document.getElementById(
-			"textArea"
-		).scrollHeight;
-		await sleep(2000);
-	}
-	else {
-		// P1Move(300)
-		$vari.text('P' + process);
-		$output.append('Process no.' + process + ' has entered the critical section.\n');
-		document.getElementById("textArea").scrollTop = document.getElementById(
-			"textArea"
-		).scrollHeight;
-		await sleep(2000);
-	}
 
-	if (process == 0) {
-		// P1Move(100);
-		EntrySection(1 - process);
-	}
-	$output.append('Process no.' + process + ' has exited the critical section.\n');
-	document.getElementById("textArea").scrollTop = document.getElementById(
-		"textArea"
-	).scrollHeight;
-	await sleep(1000);
-	if (process == 0) {
-		// P1Move(100);
-		CriticalSection(1 - process);
-	}
-	exit_state(process);
+function entry_state(id){
+    var x=document.getElementById(id);
+    x.remove();
+    var y=document.getElementById('entry');
+    y.innerHTML+='<button class=" btn btn-dark p-3 btn-lg fourth mr-4" id = '+id+' onclick="critical_state(this.id)">P'+id+'</button>';
+
 }
 
-function exit_state(process){
-    if (process == 0) {
-		$vari.text('P' + process);
-		$output.append('Process no.' + process + ' has exited.\n');
-		document.getElementById("textArea").scrollTop = document.getElementById(
-			"textArea"
-		).scrollHeight;
-		await sleep(1000);
-		// P0Move(500)
-	}
-	else {
-		$vari.text('P' + process);
-		$output.append('Process no.' + process + ' has exited.\n');
-		document.getElementById("textArea").scrollTop = document.getElementById(
-			"textArea"
-		).scrollHeight;
-		await sleep(1000);
-		// P1Move(500)
-	}
+function reset(){
+    var x=document.getElementById('entry');
+    var y=document.getElementById('critical');
+    lock=0;
+    flag=[0,0];
+    x.innerHTML="";
+    y.innerHTML="";
+    
+    
+    x.innerHTML='<button class=" btn btn-dark p-3 btn-lg fourth mr-4" id = "1" onclick="critical_state(this.id)">P1</button>';
+    x.innerHTML+='<button class="  btn btn-dark p-3 btn-lg fourth mr-4" id = "2" onclick="critical_state(this.id)">P2</button>';
 
-	interest[process] = false;
+
 }
-
