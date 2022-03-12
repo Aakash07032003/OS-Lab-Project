@@ -10,12 +10,12 @@ function critical_state(id){
         turn=1-id;
         flag[id-1]=1;
         lock=1;
-        // document.getElementById('turn_state').innerHTML='<i class="fas fa-sync-alt mr-2"></i>Turn: '+(turn+2);
+        document.getElementById('turn_state').innerHTML='<i>Turn:</i> '+(turn+2);
         if(id==1){
-            document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
+            document.getElementById('flag1').innerHTML='<i>Flag1:</i> '+(flag[0]);
         }
         else{
-            document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
+            document.getElementById('flag2').innerHTML='<i>Flag2:</i> '+(flag[1]);
         }
 
     }
@@ -35,10 +35,10 @@ function exit_state(id){
     flag[id-1]=0;
 
     if(id==1){
-        document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
+        document.getElementById('flag1').innerHTML='<i>Flag1: </i>'+(flag[0]);
     }
     else{
-        document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
+        document.getElementById('flag2').innerHTML='<i>Flag2:</i> '+(flag[1]);
     }
     var y=document.getElementById('exit');
     y.innerHTML+='<button class="button" id = '+id+' onclick="entry_state(this.id)">P'+id+'</button>';
@@ -51,7 +51,7 @@ function entry_state(id){
     var x=document.getElementById(id);
     x.remove();
     var y=document.getElementById('entry');
-    y.innerHTML+='<button class="button" id = '+id+' onclick="critical_state(this.id)">P'+id+'</button>';
+    y.innerHTML+='<button class="button" id = '+id+' onclick="critical_state(this.id)">P1</button>';
 
 }
 

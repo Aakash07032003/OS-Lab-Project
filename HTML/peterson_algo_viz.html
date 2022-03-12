@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peterson's Algorithm Visualization</title>
     <link rel="stylesheet" href="../CSS/peterson_algo_viz.css">
+    
 </head>
 
 <body>
@@ -34,26 +35,32 @@
         <h1>Flag 2: </h1>
     </div> -->
 
-    <div class="contact100-form-title pt-3 pb-0" id="flag1"></div>
-    <div class="contact100-form-title pt-3 pb-0" id="flag2"></div>
+    <div class="xyz" id='turn_state'></div>
+    <div class="xyz" id="flag1"></div>
+    <div class="xyz" id="flag2"></div>
 
     <div class="container">
         <div class="box">
             <h1>Entry State</h1>
-            <button class="button" id ='1' onclick="critical_state(this.id)">P1</button>
-            <button class="button" id = '2' onclick=" critical_state(this.id)">P2</button>
+            <div class="xyz" id = 'entry_head'>Entry state:</div>
+            <button class="button" id='1' onclick="critical_state(this.id)">P1</button>
+            <button class="button" id='2' onclick=" critical_state(this.id)">P2</button>
         </div>
         <div class="box">
             <h1>Critical State</h1>
+            <div class="xyz" id = 'critical_head'>Critical state:</div>
+            <div class = 'text-center pl-4' id='critical'></div>
         </div>
         <div class="box">
             <h1>Exit State</h1>
+            <div class="xyz" id = 'exit_head'>Exit state:</div>
+            <div class="xyz" id='exit'></div>
         </div>
         <div class="reset">
-            <button class="reset-button">Reset</button>
+            <button class="reset-button submit">Reset</button>
         </div>
     </div>
-   
+    <script src = "../JS/peterson_algo_viz.js"></script>
 </body>
 
 </html>
