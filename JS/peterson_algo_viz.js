@@ -1,4 +1,4 @@
-var turn,lock=0;
+var lock=0;
 
 var flag=[0,0];
 function critical_state(id){
@@ -7,7 +7,7 @@ function critical_state(id){
     var y=document.getElementById('critical');
     if(lock==0){
         y.innerHTML='<button class=" button" id = '+id+' onclick="exit_state(this.id)">P'+id+'</button>';
-        turn=1-id;
+        //turn=1-id;
         flag[id-1]=1;
         lock=1;
         
@@ -61,6 +61,8 @@ function reset(){
     var y=document.getElementById('critical');
     lock=0;
     flag=[0,0];
+    x.innerHTML="";
+    y.innerHTML="";
     
     
     x.innerHTML='<button class=" button" id = "1" onclick="critical_state(this.id)">P1</button>';
