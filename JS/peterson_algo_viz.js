@@ -22,7 +22,7 @@ function critical_state(id){
     }
     else{
         alert("Deadlock occures");
-        reset();
+        window.location.reload();
         lock=0;
     }
     console.log(y);
@@ -56,17 +56,17 @@ function entry_state(id){
 
 }
 
-function reset(){
-    var x=document.getElementById('entry');
-    var y=document.getElementById('critical');
-    lock=0;
-    flag=[0,0];
-    x.innerHTML="";
-    y.innerHTML="";
+// function reset(){
+//     var x=document.getElementById('entry');
+//     var y=document.getElementById('critical');
+//     lock=0;
+//     flag=[0,0];
+//     x.innerHTML="";
+//     y.innerHTML="";
     
     
-    x.innerHTML='<button class=" button" id = "1" onclick="critical_state(this.id)">P1</button>';
-    x.innerHTML+='<button class=" button" id = "2" onclick="critical_state(this.id)">P2</button>';
+//     x.innerHTML='<button class=" button" id = "1" onclick="critical_state(this.id)">P1</button>';
+//     x.innerHTML+='<button class=" button" id = "2" onclick="critical_state(this.id)">P2</button>';
 
 
-}
+// }
