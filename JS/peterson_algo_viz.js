@@ -7,18 +7,9 @@ function critical_state(id){
     var y=document.getElementById('critical');
     if(lock==0){
         y.innerHTML='<button class=" button" id = '+id+' onclick="exit_state(this.id)">P'+id+'</button>';
-        //turn=1-id;
         flag[id-1]=1;
-        lock=1;
-        
-        // if(id==1){
-        //     document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"</i>Flag1: '+(flag[0]);
-            
-        // }
-        // else{
-        //     document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"</i>Flag2: '+(flag[1]);
-        // }
-
+        lock=1;    
+    
     }
     else{
         alert("Deadlock occures");
@@ -34,13 +25,6 @@ function exit_state(id){
     x.remove();
     lock=0;
     flag[id-1]=0;
-
-    // if(id==1){
-    //     document.getElementById('flag1').innerHTML='<i>class= "fas fa-flag mr-2" </i>Flag1:'+(flag[0]);
-    // }
-    // else{
-    //     document.getElementById('flag2').innerHTML='<i>class="fas fa-flag mr-2"</i>Flag2: '+(flag[1]);
-    // }
     var y=document.getElementById('exit');
     y.innerHTML+='<button class="button" id = '+id+' onclick="entry_state(this.id)">P'+id+'</button>';
     
@@ -56,17 +40,3 @@ function entry_state(id){
 
 }
 
-// function reset(){
-//     var x=document.getElementById('entry');
-//     var y=document.getElementById('critical');
-//     lock=0;
-//     flag=[0,0];
-//     x.innerHTML="";
-//     y.innerHTML="";
-    
-    
-//     x.innerHTML='<button class=" button" id = "1" onclick="critical_state(this.id)">P1</button>';
-//     x.innerHTML+='<button class=" button" id = "2" onclick="critical_state(this.id)">P2</button>';
-
-
-// }
