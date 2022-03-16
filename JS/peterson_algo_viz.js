@@ -1,6 +1,7 @@
 var lock=0;
 
-var flag=[0,0];
+var flag=[0,0]; //flag[0] and flag[1] are false initially for P1 and P2 simaltaneously
+//Time complexity for critical state function is O(1)
 function critical_state(id){
     var x=document.getElementById(id);
     x.remove();
@@ -20,6 +21,7 @@ function critical_state(id){
 
 }
 
+//Time complexity for exit state is O(1)
 function exit_state(id){
     var x=document.getElementById(id);
     x.remove();
@@ -31,7 +33,7 @@ function exit_state(id){
 
 }
 
-
+//Time complexity for entry state is O(1)
 function entry_state(id){
     var x=document.getElementById(id);
     x.remove();
