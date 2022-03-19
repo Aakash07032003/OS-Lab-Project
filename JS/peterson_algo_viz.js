@@ -17,7 +17,7 @@ function critical_state(id){
         window.location.reload();
         lock=0;
     }
-    console.log(y);
+    
 
 }
 
