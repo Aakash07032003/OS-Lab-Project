@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peterson's Algorithm Visualization</title>
+    <title>Test & Set Lock Visualization</title>
     <link rel="stylesheet" href="../CSS/tsl_viz.css">
 </head>
 
@@ -29,8 +29,8 @@
         </div>
     </header>
 
-    <div class="form">
-        <form action="noaction.php">
+    <!-- <div class="form">
+        <form action="noaction.php"></form>
             <div class="form-input">
                 <h1>Enter the number of processes:</h1>
             </div>
@@ -38,25 +38,70 @@
                 <input type="text" name="name" placeholder="No. of Processes">
             </div>
             <div class="reset">
-                <button class="reset-button">Submit</button>
+                <button class="reset-button" onclick="lockvari()">Submit</button>
                 <button class="reset-button">Reset</button>
             </div>
+    </div> -->
+    
+    <!-- <div class="container mt-5 pt-5" id='process_input'>
+            <label for="process">No. of Process:</label>
+                <div class="wrap-input100">
+                    <input class="input100" type="number" id="process" placeholder="enter the number of process">
+                    <span class="focus-input100"></span>
+                </div>
+        </div>
+        submit
+        <div class = 'container'>
+            <button class="contact100-form-btn submit" onclick = "lockvari()">
+                <span>
+                    Submit
+                </span>
+            </button>
+        </div> -->
+
+    <div class="form-input" id='process_input'>
+        <h1>No. of Process:</h1>
+        <div class="wrap-input200">
+            <input class="input200" type="number" id="process" placeholder="Number of process">
+            <span class="focus-input200"></span>
+        </div>
     </div>
+
+    <div class >
+        <button class="reset-button" onclick = "lockvari()">Submit </button>
+    </div> 
+
 
     <div class="container">
         <div class="box">
             <h1>Added Process(es)</h1>
+            <div class = 'continer pl-4' id='added'></div>
         </div>
+        <div  id = 'added_head'>Added state:</div>
+        <!-- <div class = 'continer pl-4' id='added'></div> -->
         <div class="box">
             <h1>Entry State</h1>
+            <div class = 'continer pl-4' id='entry'></div>
         </div>
+        <div  id = 'entry_head'>Entry state:</div>
+        <!-- <div class = 'continer pl-4' id='entry'></div> -->
         <div class="box">
             <h1>Critical State</h1>
+            <div class = 'continer pl-4' id='cs'></div>
         </div>
-        <div class="box">
+        <div  id = 'cs_head'>Cs State:</div>
+        <!-- <div class = 'continer pl-4' id='cs'></div> -->
+        
+        <div class="box"> 
             <h1>Exit State</h1>
+            <div class = 'continer pl-4' id='exit'></div>
         </div>
+            
+         <div  id = 'exit_head'>Exit State:</div>
+         <!-- <div class = 'continer pl-4' id='exit'></div> -->
+       
     </div>
+    <script src = "../JS/tsl_viz.js"></script>
 </body>
 
 </html>
