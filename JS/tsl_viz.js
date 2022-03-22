@@ -1,5 +1,4 @@
 var entry_state = [];
-var track = 0;
 var lock = 0;
 var entry = 0;
 var state = document.getElementById('lock_state');
@@ -7,44 +6,29 @@ var state = document.getElementById('lock_state');
 function add_exit(id)
 {
     lock = 0;
-    // if(lock == 1)
-    // {
-    //     state.innerHTML = '<i class="fa fa-lock pr-2"></i>Lock State';
-    // }
-    // else 
-    // {
-    //     state.innerHTML = '<i class="fa fa-unlock pr-2" aria-hidden="true"></i>Unlocked state';
-    // }
+    
     document.getElementById('exit_head').style.display = "";
     var x = document.getElementById(id);
     x.remove();
     var z = document.getElementById('exit');
-    var s = '<button type="button" class="btn ml-3 my-2 sixth"  id = '+(id)+'>'+'process'+(id)+'</button>';
+    var s = '<button type="button" class = "container4"  id = '+(id)+'>'+'process'+(id)+'</button>';
     z.innerHTML += s;
 }
 function add_cs(id)
 {
     if(lock == 1)
     {
-        alert("some process is already present plz try again later");
+        alert("Process is present in Critical State try again later");
     }
     else
     {
         entry = 0;
         lock = 1;
-        // if(lock == 1)
-        // {
-        //     state.innerHTML = '<i class="fa fa-lock pr-2"></i>Lock State';
-        // }
-        // else 
-        // {
-        //     state.innerHTML = '<i class="fa fa-unlock pr-2" aria-hidden="true"></i>Unlocked state';
-        // }
         document.getElementById('cs_head').style.display = "";
         var x = document.getElementById(id);
         x.remove();
         var z = document.getElementById('cs');
-        var s = '<button type="button" class="btn ml-3 my-2 fifth" onclick="add_exit(this.id)" id = '+(id)+'>'+'process'+(id)+'</button>';
+        var s = '<button type="button" class = "container3" onclick="add_exit(this.id)" id = '+(id)+'>'+'process'+(id)+'</button>';
         z.innerHTML += s;
        
     }
@@ -59,13 +43,13 @@ function add_entry(id)
         var x = document.getElementById(id);
         x.remove();
         var z = document.getElementById('entry');
-        var s = '<button type="button" class="btn ml-3 my-2 fourth" onclick="add_cs(this.id)" id = '+(id)+'>'+'process'+(id)+'</button>';
+        var s = '<button type="button" class = "container2" onclick="add_cs(this.id)" id = '+(id)+'>'+'process'+(id)+'</button>';
         z.innerHTML += s;
     }
     else 
     {
         entry = 0;
-        alert('deadlock condition start the process again');
+        alert('Deadlock condition ');
         lockvari();
     }
 }
@@ -84,8 +68,8 @@ function lockvari()
     t.innerHTML = "";
     for(var i = 0; i < n; i++)
     {
-        var s = '<button type="button" class="btn ml-3 my-2 third" id = '+(i+1)+' onclick="add_entry(this.id)">'+'process'+(i+1)+'</button>';
+        var s = '<button type="button" class = "container1" id = '+(i+1)+' onclick="add_entry(this.id)">'+'process'+(i+1)+'</button>';
         t.innerHTML += s;
     }
-    //added part
+    
 }
