@@ -1,8 +1,9 @@
-var entry_state = [];
-var lock = 0;
-var entry = 0;
-var state = document.getElementById('lock_state');
+var entry_state = []; //for pushing process in entry state from added process column
+var lock = 0; //for checking if process present in critical state
+var entry = 0;//for checking if process present in entry state
 
+
+// Exit State having complexity O(1)
 function add_exit(id)
 {
     lock = 0;
@@ -14,6 +15,7 @@ function add_exit(id)
     var s = '<button type="button" class = "container4"  id = '+(id)+'>'+'process'+(id)+'</button>';
     z.innerHTML += s;
 }
+// Critical State having complexity O(1)
 function add_cs(id)
 {
     if(lock == 1)
@@ -33,11 +35,12 @@ function add_cs(id)
        
     }
 }
+// Entry State having complexity O(1)
 function add_entry(id)
 {
     if(entry == 0)
     {
-        entry = 1;
+        entry = 1;    
         document.getElementById('entry_head').style.display = "";
         entry_state.push(id);
         var x = document.getElementById(id);
@@ -54,6 +57,7 @@ function add_entry(id)
     }
 }
 
+//Time complexity O(n)
 function lockvari()
 {
     var n = document.getElementById('process').value;
