@@ -19,9 +19,8 @@ function add_exit(id)
 function add_cs(id)
 {
     if(lock == 1)
-    {
-        alert("Process is present in Critical State try again later");
-    }
+         alert("Process is present in Critical State try again later");
+
     else
     {
         entry = 0;
