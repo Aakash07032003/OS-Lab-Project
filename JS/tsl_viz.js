@@ -58,7 +58,7 @@ function add_entry(id)
 }
 
 //Time complexity O(n)
-function lockvari()
+function start()
 {
     var n = document.getElementById('process').value;
     //added
