@@ -61,7 +61,7 @@ body {
 }
 
 .container1 {
-    display: flex;
+    display: inline;
 }
 
 .box {
@@ -134,21 +134,26 @@ body {
 }
 
 .addcustomer {
+    margin-left: 20px;
     color: white;
 }
 
 .add {
     cursor: pointer;
     color: black;
-    background-color: gray;
+    /* background-color: gray; */
     padding: 5px;
     margin: 10px;
     font-size: 1rem;
     border: transparent;
     border-radius: 5px;
-    text-align: center;
+    /* text-align: center; */
+    vertical-align: middle;
 }
 
+.addbutton{
+    margin-top: 15px;
+}
 .reset {
     display: block;
     width: 100px;
@@ -156,6 +161,7 @@ body {
 }
 
 .reset-button {
+    margin-left: 20px;
     font-size: 2rem;
     cursor: pointer;
     text-align: center;
