@@ -1,7 +1,10 @@
-var Customers = 0;
-var lock =0;
+var Customers = 0;  
+var lock =0;    
 var customer_wr = 0;
+var p=0;
+var n ;
 
+//Time Complexity O(1)
 document.getElementById('c1').innerHTML = "";
 var x =0
 function buttonClick() {
@@ -12,26 +15,30 @@ function buttonClick() {
     x++;
 }
 
-var n ;
+
+//Time Complexity O(n)
 function start(){
     n= document.getElementById('chairs').value;
+    p=n;
+    document.getElementById('output_ch').innerHTML = 'No. of chairs in waiting room: '+(p)+'';
     lock=0;
     document.getElementById('added_customer');
     var t = document.getElementById('c1');
     document.getElementById('c2').innerHTML = "";
-    // document.getElementById('c3').innerHTML = "";
     document.getElementById('c4').innerHTML = "";
     t.innerHTML = "";
     for(var i = 0; i < Customers; i++)
     {
         var s = '<button type="button" class = "container1" id = '+(i+1)+' onclick="add_wr(this.id)">'+'Customer'+(i+1)+'</button>'; 
-        // customer_wr ++;
         t.innerHTML += s;
     }
     document.getElementById('chairs').value = "";
+
     console.log(n);
 }
 
+
+//Time Complexity O(1)
 function add_wr(id)
 {
         customer_wr++;
@@ -49,6 +56,7 @@ function add_wr(id)
             
 }
 
+//Time Complexity O(1)
 function add_cut(id){
     if (lock == 0){
         customer_wr--;
@@ -67,6 +75,7 @@ function add_cut(id){
     
 }
 
+//Time Complexity O(1)
 function add_comp(id){
     lock = 0;
     document.getElementById('customer_done').style.display = "";
