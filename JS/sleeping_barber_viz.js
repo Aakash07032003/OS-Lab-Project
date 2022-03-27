@@ -5,7 +5,6 @@ lock =0;
 document.getElementById('c1').innerHTML = "";
 var x =0
 function buttonClick() {
-    // document.getElementById('c1').innerHTML+=Customers;
     Customers++;
     console.log(Customers)
     var s = '<button type="button" class = "container1" id = '+(x+1)+'>'+'Customer'+(x+1)+'</button>';
