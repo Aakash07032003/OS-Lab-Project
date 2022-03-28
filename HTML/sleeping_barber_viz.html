@@ -33,7 +33,7 @@
     <div class="form-input" id='chairs_input'>
         <h1>Enter No. of Chairs in Waiting Room:</h1>
         <div class>
-            <input  type="number" min="0" id="chairs" placeholder="Number of chairs">
+            <input  type="number" min="0" oninput="this.value = Math.abs(this.value)"  id="chairs" placeholder="Number of chairs">
             <span ></span>
         </div>
     </div>

@@ -1,8 +1,8 @@
-var Customers = 0;  
-var lock =0;    
-var customer_wr = 0;
-var p=0;
-var n ;
+var Customers = 0;    //for total no. of customers
+var barber =0;    //To check barber is free or not
+var customer_wr = 0;   //No. of customers in waiting room
+var p=0;     //for display purpose
+var n ;   //No. of seats in waiting room
 
 //Time Complexity O(1)
 document.getElementById('c1').innerHTML = "";
@@ -21,7 +21,7 @@ function start(){
     n= document.getElementById('chairs').value;
     p=n;
     document.getElementById('output_ch').innerHTML = 'No. of chairs in waiting room: '+(p)+'';
-    lock=0;
+    barber=0;
     document.getElementById('added_customer');
     var t = document.getElementById('c1');
     document.getElementById('c2').innerHTML = "";
@@ -58,10 +58,9 @@ function add_wr(id)
 
 //Time Complexity O(1)
 function add_cut(id){
-    if (lock == 0){
+    if (barber == 0){
         customer_wr--;
-        lock = 1;
-        n++;
+        barber = 1;
         document.getElementById('customer_cut').style.display = "";
         var x = document.getElementById(id);
         x.remove();
@@ -77,7 +76,7 @@ function add_cut(id){
 
 //Time Complexity O(1)
 function add_comp(id){
-    lock = 0;
+    barber = 0;
     document.getElementById('customer_done').style.display = "";
     var x = document.getElementById(id);
     x.remove();
