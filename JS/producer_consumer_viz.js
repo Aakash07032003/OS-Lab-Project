@@ -8,26 +8,30 @@ const executeBTN = document.getElementById("executeBTN");
 
 var btnLocation = 0;  //initialised btnLocation variable to keep track of location of placed buttons
 
+
+
 // Time Complexity = O(1)
 function producer() {
     // while producer function is running, the mutex is set to 0. This is so that no other processes run while the producer function is running.
-    --mutex, ++full, --empty, item++;
+    
+    mutex--,++full, --empty, item++;
 
     console.log("Producer produced: " + item);
     $output.append("Producer produced: " + item + "\n");
 
-    ++mutex;    //mutex is incremented back to 1 to signify the completion of producer process.
+    mutex++;    //mutex is incremented back to 1 to signify the completion of producer process.
 }
 
 // Time Complexity = O(1)
 function consumer() {
-    --mutex, --full, ++empty;
+    
+    mutex--,--full, ++empty;
 
     console.log("Consumer consumed: " + item);
     $output.append("Consumer consumed: " + item + "\n");
 
     item--;
-    ++mutex;
+    mutex++;
 }
 
 // Time Complexity = O(n)

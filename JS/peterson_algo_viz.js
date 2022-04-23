@@ -1,4 +1,4 @@
-var lock=0;
+var turn,lock=0;
 
 var flag=[0,0]; //flag[0] and flag[1] are false initially for P1 and P2 simaltaneously
 //Time complexity for critical state function is O(1)
@@ -8,8 +8,10 @@ function critical_state(id){
     var y=document.getElementById('critical');
     if(lock==0){
         y.innerHTML='<button class=" button" id = '+id+' onclick="exit_state(this.id)">P'+id+'</button>';
+        turn=1-id;
         flag[id-1]=1;
         lock=1;    
+        document.getElementById('turn_state').innerHTML='<i class="fas fa-sync-alt mr-2"></i>Turn: '+(turn+2);
     
     }
     else{
